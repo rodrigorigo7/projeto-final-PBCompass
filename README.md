@@ -40,12 +40,19 @@ Será utilizada a API NestJS Cinema https://github.com/juniorschmitz/nestjs-cine
 
 **DoR**
 
-- 
-
+- Os recursos necessários estarem todos disponíveis e funcionando corretamente;
+- Critérios de Aceitação (Acceptance Criteria) definidos;
+- A ferramenta de testes (K6) deve estar instalada  ;
 
 **DoD**
 
 - Todos os testes planejados foram executados;  
 - Nenhum bug crítico ou bloqueante permanece aberto;  
 - Análise de Testes cobrindo as rotas Login,Usuários,Produtos e Carrinhos;  
-- Automação de testes baseado na análise realizada;  
+- Automação de testes baseado na análise realizada;
+
+**Acceptance Criteria**
+
+- CRUD de Cadastro de Filmes implementado (CRIAR,LISTAR,EDITAR E DELETAR);
+- Os filmes deverão possuir os campos TITLE, DESCRIPTION, LAUNCHDATE e SHOWTIMES;
+- Não deverá ser possível listar, editar ou excluir um filme não cadastrado (inexistente);  
