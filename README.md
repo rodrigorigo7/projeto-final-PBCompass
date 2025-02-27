@@ -59,7 +59,7 @@ Será utilizada a API NestJS Cinema https://github.com/juniorschmitz/nestjs-cine
 - CRUD de Cadastro de Tickets implementado (CRIAR,LISTAR,EDITAR E DELETAR);  
 - Os tickets deverão possuir os campos MOVIEID, USERID, SEATNUMBER,PRICE,SHOWTIME;
 - Não deverá ser possível cadastrar um ticket para um filme não cadastrado;
-- Não deverá ser possível cadastar um ticket com um assento fora do intervalo entre 0-99;
+- Não deverá ser possível cadastrar um ticket com um assento fora do intervalo entre 0-99;
 - Não deverá ser possível cadastrar um ticket com preço fora do intervalo entre 0-60;  
 - Não deverá ser possível listar,editar ou excluir um ticket não cadastrado (inexistente);
 
@@ -74,3 +74,7 @@ O cronograma a ser seguido é o cronograma da sprint 08 (Início dia 24/02/2025 
 
 ## Como os Resultados dos Testes Serão Divulgados
 Eles serão registrados no GitHub, e apresentados na Challenge do dia 12/03/25,em um tempo  total de 6 minutos.
+
+# Mapas Mentais
+
+## Mapa Mental de Planejamento de Testes
