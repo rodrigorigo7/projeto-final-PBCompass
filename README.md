@@ -27,7 +27,7 @@ Projeto da Challenge Final (Sprint 8) do Programa de Bolsas da Compass UOL. Nele
 
 ## Local de Testes
 
-Será utilizada a API NestJS Cinema https://github.com/juniorschmitz/nestjs-cinema, rodando localmente. Além disso, serão usadas  e ferramentas como  Postman,Newman,Miro,GitHub,Jira,Jmeter,Visual Studio Code,Docker e K6.
+Será utilizada a API NestJS Cinema https://github.com/juniorschmitz/nestjs-cinema, rodando localmente. Além disso, serão usadas  e ferramentas como  Postman,Newman,Miro,GitHub,Jira,Visual Studio Code,Docker e K6.
 
 # Recursos Necessários
 
