@@ -78,3 +78,18 @@ Eles serão registrados no GitHub, e apresentados na Challenge do dia 12/03/25,e
 # Mapas Mentais
 
 ## Mapa Mental de Planejamento de Testes
+
+Desenvolvi este mapa mental com foco no planejamento dos testes para a sprint. Ele também está disponível no diretório [MindMaps](MindMaps).
+
+![Mapa Mental](imgs/mapamental.png)
+
+# Testes Candidatos a Automação
+
+- Criação de Filmes;  
+- Editar Filmes;  
+- Procurar Filme por id;  
+- Excluir Filmes;  
+- Criar Ticket;  
+- Procurar Ticket por id;  
+- Editar ticket;  
+- Excluir Ticket;  
