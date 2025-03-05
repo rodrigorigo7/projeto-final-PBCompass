@@ -93,3 +93,7 @@ Desenvolvi este mapa mental com foco no planejamento dos testes para a sprint. E
 - Procurar Ticket por id;  
 - Editar ticket;  
 - Excluir Ticket;  
+
+# Resultados dos Testes Funcionais
+
+Os resultados dos Testes Funcionais foram publicados no **Jira** (https://rodrigorigo.atlassian.net/plugins/servlet/ac/com.soldevelo.apps.test_management/test-cycles?board.id=1&project.key=SCRUM&project.id=10000&board.type=simple). Nele, estão contidos breves explicações sobre o que foi testado, prints, além de resultado (**"Passed"** ou **"Failed"**)
