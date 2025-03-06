@@ -127,3 +127,185 @@ Ao enviar uma requisição **PUT com algum erro no body, ou então com id inexis
 Ao tentar **excluir um usuário que não existe**, a requisição falhará,e retornará com mensagem de erro
 
 ![alt text](<imgs/movies/deleteinexistente.png>)
+
+# Planejamento de Testes de Performance
+
+Para fins de testar a API de modo não funcional, será usado a ferramenta **K6** (link da documentação [aqui](https://grafana.com/docs/k6/latest/))
+
+## Ferramentas Utilizadas
+
+- Visual Studio Code;
+- K6;  
+- Prompt de Comando;  
+- GitHub;
+
+## 📌 Guia de Instalação e Execução do k6
+
+### 🔹 O que é o k6?
+k6 é uma ferramenta de testes de carga e desempenho para APIs e aplicações web. Ele permite simular múltiplos usuários acessando um sistema ao mesmo tempo.
+
+---
+
+### 📥 Instalação
+
+### 🔹 Windows (usando Chocolatey)
+Se você ainda não tem o **Chocolatey**, instale-o primeiro seguindo as instruções em [https://chocolatey.org/install](https://chocolatey.org/install).
+
+Depois, execute o seguinte comando no **Prompt de Comando (cmd) como administrador**:
+```sh
+choco install k6
+```
+
+### 🔹 Linux (Ubuntu/Debian)
+Execute os seguintes comandos:
+```sh
+sudo gpg -k || sudo apt install gnupg
+curl -fsSL https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k6.gpg
+echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+sudo apt update && sudo apt install k6
+```
+
+### 🔹 macOS (usando Homebrew)
+Se você usa **Homebrew**, basta executar:
+```sh
+brew install k6
+```
+
+### 🔹 Verificando a instalação
+Após a instalação, execute o comando abaixo para verificar se o k6 foi instalado corretamente:
+```sh
+k6 version
+```
+Se tudo estiver certo, você verá a versão do k6 instalada.
+
+---
+
+## 🚀 Como Executar um Teste com k6
+
+### 🔹 Criando um Script de Teste
+Crie um arquivo `teste.js` com o seguinte conteúdo:
+```javascript
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10, // 10 usuários virtuais
+  duration: '30s', // Duração do teste
+};
+
+export default function () {
+  let res = http.get('https://test-api.k6.io/public/crocodiles/');
+  check(res, {
+    'status é 200': (r) => r.status === 200,
+  });
+  sleep(1);
+}
+```
+
+### 🔹 Executando o Teste
+Agora, execute o teste com o comando:
+```sh
+k6 run teste.js
+```
+O k6 começará a simular **10 usuários virtuais (VUs) por 30 segundos**.
+
+---
+
+## 📊 Analisando os Resultados
+Durante a execução, o k6 exibirá estatísticas como:
+- **taxa de requisições**
+- **tempo de resposta**
+- **quantidade de erros**
+
+Saída esperada no terminal:
+```
+checks................: 100.00% ✓ 10 ✗ 0  
+http_req_duration....: avg=250ms min=180ms max=500ms
+http_reqs............: 500 requests
+vus..................: 10  
+```
+Isso permite avaliar o desempenho da API sob carga.
+
+---
+
+## 🔧 Recursos Adicionais
+- [Documentação Oficial do k6](https://k6.io/docs/)
+- [Repositório GitHub](https://github.com/grafana/k6)
+)
+
+**Agora está tudo pronto para executar os testes de desempenho com o K6! 🚀**
+
+Bom, agora indo para o planejamento propriamente dito...
+
+## Movies
+
+### Cadastrar Filme
+
+**Critérios de Aceitação**
+
+- A API deve ser capaz de processar pelo menos 100 solicitações de criação de filmes por segundo;  
+- O tempo médio de resposta para a criação de um novo filme não deve exceder 200 milissegundos.  
+
+**Tipo de Teste**
+
+Será executado o **Teste de Estresse**, com uma carga de 130 usuários. O teste durará 2 minutos.
+
+### Listar todos os filmes
+
+**Critérios de Aceitação**
+
+- A API deve ser capaz de responder a solicitações GET de listagem de filmes em menos de 100 milissegundos;  
+- A lista de filmes deve ser paginada, com no máximo 20 filmes por página.  
+
+**Tipo de Teste**
+
+Será executado o **Teste de Escalabilidade**, com uma carga máxima de 50 usuários. O teste durará 4 minutos.
+
+
+### Listar Filmes Individualmente por id
+
+**Critérios de Aceitação**
+
+- A API deve ser capaz de responder a solicitações GET de detalhes de um filme em menos de 50 milissegundos.  
+
+**Tipo de Teste**
+
+Será executado o **Teste de Pico**, com uma carga de 100 usuários. O teste durará 2 minutos.
+
+
+### Editar Filme
+
+**Critérios de Aceitação**
+
+- A API deve ser capaz de processar pelo menos 50 solicitações de atualização de filmes por segundo;  
+- O tempo médio de resposta para a atualização dos detalhes de um filme não deve exceder 300 milissegundos. 
+
+**Tipo de Teste**
+
+Será executado o **Teste da Fumaça**, com apenas 1 usuário. O teste durará 5 segundos.
+
+
+### Excluir Filme
+
+**Critérios de Aceitação**
+
+- A API deve ser capaz de processar pelo menos 30 solicitações de exclusão de filmes por segundo;  
+- O tempo médio de resposta para a exclusão de um filme não deve exceder 400 milissegundos.  
+
+**Tipo de Teste**
+
+Será executado o **Teste de Carga**, com uma carga de 50 usuários. O teste durará 2 minutos.
+
+
+## Tickets
+
+### Cadastrar Tickets
+
+**Critérios de Aceitação**
+
+- A API deve ser capaz de processar pelo menos 50 solicitações de reserva de ingressos por segundo;  
+- O tempo médio de resposta para a reserva de um ingresso não deve exceder 300 milissegundos.  
+
+**Tipo de Teste**
+
+O teste a ser executado será o **Teste de Carga**, com uma quantidade de VUs entre 50 a 80. O teste terá duração de 3 minutos. 
