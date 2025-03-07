@@ -2,7 +2,7 @@ import faker from "https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.
 
 const getMovies = async () => (await fetch('http://localhost:3000/movies')).json().movies;
 
-const generateTickets = async () => {
+ export const generateTickets = async () => {
   const movies = await getMovies();
   const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I','J'];
   const usedSeats = new Set();

@@ -1,4 +1,6 @@
-export {ENDPOINTS} from './contants.js'
+export {ENDPOINTS} from './constants.js'
 export {baseChecks} from './baseCheck.js'
-export {baseRest} from '../../services/BaseRest.js'
+export {BaseRest} from '../../services/BaseRest.js'
 export {testConfig} from '../../config/environments.js'
+export{generateMovies} from '../../data/dynamic/generateMovies.js'
+export {generateTickets} from '../../data/dynamic/generateTickets.js'
