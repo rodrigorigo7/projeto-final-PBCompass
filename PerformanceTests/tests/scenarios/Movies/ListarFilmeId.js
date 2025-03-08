@@ -4,23 +4,39 @@ import {ENDPOINTS,baseChecks,BaseRest,testConfig,generateMovies} from '../../../
 
 export function handleSummary(data) {
     return {
-        "PostMovies-Stress.html": htmlReport(data),
+        "GetIdMovies-Spike.html": htmlReport(data),
     };
 }
 
 const base_uri = testConfig.environment.hml.url;
 const baseRest = new BaseRest(base_uri);
 const baseCheck = new baseChecks();
-export const options = testConfig.options.stressTest;
+export const options = testConfig.options.spikeTest;
+
+export function setup() {
+    
+    const res = baseRest.post(ENDPOINTS.MOVIES_ENDPOINT,generateMovies());
+    
+    baseCheck.checkStatusCode(res,201);
+    baseCheck.checkResponseTime(res,200);
+
+    sleep(1);
+}
 
 export default function () {
 
-    const res = baseRest.post(ENDPOINTS.MOVIES_ENDPOINT,generateMovies());
+    const resGet = baseRest.get(ENDPOINTS.MOVIES_ENDPOINT)
+    let movies = resGet.json();
+    let movieId = movies.map(movie => movie._id);
+
+    movieId.forEach(id => {   
+    const res = baseRest.get(ENDPOINTS.MOVIES_ENDPOINT +`/${id}`);
     console.log(res);
     console.log(res.body);
-
-    baseCheck.checkStatusCode(res,201);
+    baseCheck.checkStatusCode(res,200);
     baseCheck.checkResponseTime(res,200);
+
+    });
 
     sleep(1);
 }
