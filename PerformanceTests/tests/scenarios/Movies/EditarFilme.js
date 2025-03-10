@@ -4,7 +4,7 @@ import {ENDPOINTS,baseChecks,BaseRest,testConfig,generateMovies,generatePutMovie
 
 export function handleSummary(data) {
     return {
-        "PutMoviesBat2-Smoke.html": htmlReport(data),
+        "PutMoviesBat3-Smoke.html": htmlReport(data),
     };
 }
 

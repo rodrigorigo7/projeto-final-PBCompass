@@ -2,23 +2,25 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 import { sleep } from 'k6';
 import {ENDPOINTS,baseChecks,BaseRest,testConfig,generateMovies} from '../../../support/base/baseTest.js';
 
-/*export function handleSummary(data) {
+export function handleSummary(data) {
     return {
-        "DeleteMoviesBat1-Load.html": htmlReport(data),
+        "DeleteMoviesBat3-Load.html": htmlReport(data),
     };
-}*/
+}
 
 const base_uri = testConfig.environment.hml.url;
 const baseRest = new BaseRest(base_uri);
 const baseCheck = new baseChecks();
-//export const options = testConfig.options.loadTest;
+export const options = testConfig.options.loadTest;
 
 export function setup() {
     
+    for (let i = 0; i < 150; i++) {
     const res = baseRest.post(ENDPOINTS.MOVIES_ENDPOINT,generateMovies());
     
     baseCheck.checkStatusCode(res,201);
     baseCheck.checkResponseTime(res,200);
+    }
 
     sleep(1);
 }

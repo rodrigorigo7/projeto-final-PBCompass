@@ -4,7 +4,7 @@ import { sleep } from 'k6';
 
 export function handleSummary(data) {
     return {
-        "GetMovies-Escalabilidade.html": htmlReport(data),
+        "GetMovies-EscalabilidadeBat3.html": htmlReport(data),
     };
 }
 

@@ -4,7 +4,7 @@ import {ENDPOINTS,baseChecks,BaseRest,testConfig,generateMovies} from '../../../
 
 export function handleSummary(data) {
     return {
-        "GetIdMovies-Spike.html": htmlReport(data),
+        "GetIdMovies-SpikeBat3.html": htmlReport(data),
     };
 }
 
@@ -15,11 +15,12 @@ export const options = testConfig.options.spikeTest;
 
 export function setup() {
     
+    for (let i =0 ; i < 100; i++) {
     const res = baseRest.post(ENDPOINTS.MOVIES_ENDPOINT,generateMovies());
     
     baseCheck.checkStatusCode(res,201);
     baseCheck.checkResponseTime(res,200);
-
+    }
     sleep(1);
 }
 
