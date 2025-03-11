@@ -322,19 +322,19 @@ O teste a ser executado será o **Teste de Fumaça**.
 
 # Resultados dos Testes de Performance
 
-Cada rota contou com 3 baterias de testes, de modo a
+Cada rota contou com 3 baterias de testes, de modo que fosse possível verificar com maior integridade a eficiência da API.   
 
-## Cadastrar Filmes
+## Cadastrar Filmes (Teste de Estresse)
 
 ![alt text](imgs/movies/postmovies.png)
 
 **Total de Requisições:**
 
-- Teste 1 (18:12): 20.933 requisições.  
+- Bateria 1: 20.933 requisições.  
 
-- Teste 2 (18:15): 20.957 requisições.  
+- Bateria 2: 20.957 requisições.  
 
-- Teste 3 (18:18): 20.799 requisições.  
+- Bateria 3: 20.799 requisições.  
 
 Todos os testes tiveram um número semelhante de requisições, com uma taxa de requisições por segundo variando entre 153.09/s e 157.08/s.
 
@@ -354,17 +354,17 @@ Em todos os três testes, nenhuma requisição falhou.
 
 - O tempo máximo de duração variou entre 188.11 ms e 210.51 ms.  
 
-## Listar todos os filmes
+## Listar todos os filmes  (Teste de Escalabilidade)
 
 ![alt text](imgs/movies/getmovies.png)
 
 **Total de Requisições:**
 
-- Teste 1 (18:28): 3.878 requisições;  
+- Bateria 1: 3.878 requisições;  
 
-- Teste 2 (18:39): 3.879 requisições;  
+- Bateria 2: 3.879 requisições;  
 
-- Teste 3 (18:45): 3.876 requisições;  
+- Bateria 3: 3.876 requisições;  
 
 Todos os testes tiveram um número semelhante de requisições, com uma taxa de requisições por segundo variando entre 16.08/s e 16.10/s.
 
@@ -384,17 +384,17 @@ Nenhum threshold foi violado em nenhum dos testes.
 
 - O tempo máximo de duração variou entre 30.51 ms e 91.48 ms.  
 
-## Listar Filme Individualmente
+## Listar Filme Individualmente (Teste de Pico)
 
 ![alt text](imgs/movies/getidmovies.png)
 
 **Total de Requisições:**
 
-- Teste 1 (18:49): 72.719 requisições.  
+- Bateria 1: 72.719 requisições.  
 
-- Teste 2 (18:52): 74.032 requisições.  
+- Bateria 2: 74.032 requisições.  
 
-- Teste 3 (18:55): 55.852 requisições.  
+- Bateria 3: 55.852 requisições.  
 
 A taxa de requisições por segundo variou entre **455.49/s e 604.07/s**, indicando um alto volume de requisições.  
 
@@ -414,7 +414,7 @@ Em todos os três testes, nenhuma requisição falhou.
 
 - O tempo máximo de duração variou entre 60.84 ms e 167.43 ms.  
 
-## Editar Filme  
+## Editar Filme  (Teste da Fumaça)
 
 ![alt text](imgs/movies/putmovies.png)
 
@@ -432,11 +432,11 @@ Em todos os três testes, nenhuma requisição falhou.
 
 **Iterações:**
 
-- Foram realizadas 5 iterações em cada teste.  
+- Foram realizadas 5 iterações em cada bateria de  teste.  
 
 - A taxa de iterações foi de aproximadamente 0.80 a 0.81 iterações por segundo.  
 
-## Excluir filme 
+## Excluir Filme (Teste de Carga)
 
 ![alt text](imgs/movies/deletemovies.png)
 
