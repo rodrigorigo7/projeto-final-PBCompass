@@ -309,3 +309,153 @@ Será executado o **Teste de Carga**, com uma carga de 50 usuários. O teste dur
 **Tipo de Teste**
 
 O teste a ser executado será o **Teste de Carga**, com uma quantidade de VUs entre 50 a 80. O teste terá duração de 3 minutos. 
+
+## Fluxo Completo (Cadastrar Filme,Cadastrar Ticket,Excluir Filme)
+
+**Critérios de Aceitação**
+
+- Deve ser funcional;  
+
+**Tipo de Teste**
+
+O teste a ser executado será o **Teste de Fumaça**.  
+
+# Resultados dos Testes de Performance
+
+Cada rota contou com 3 baterias de testes, de modo a
+
+## Cadastrar Filmes
+
+![alt text](imgs/movies/postmovies.png)
+
+**Total de Requisições:**
+
+- Teste 1 (18:12): 20.933 requisições.  
+
+- Teste 2 (18:15): 20.957 requisições.  
+
+- Teste 3 (18:18): 20.799 requisições.  
+
+Todos os testes tiveram um número semelhante de requisições, com uma taxa de requisições por segundo variando entre 153.09/s e 157.08/s.
+
+**Requisições Falhas:**
+
+Em todos os três testes, nenhuma requisição falhou.  
+
+**Checks e Thresholds:**
+
+- Todos os testes passaram em todos os checks (status code e tempo de resposta dentro do esperado).  
+
+- Nenhum threshold foi violado em nenhum dos testes.  
+
+**Duração das Requisições:**
+
+- A duração média das requisições (http_req_duration) variou entre 2.18 ms e 2.44 ms.  
+
+- O tempo máximo de duração variou entre 188.11 ms e 210.51 ms.  
+
+## Listar todos os filmes
+
+![alt text](imgs/movies/getmovies.png)
+
+**Total de Requisições:**
+
+- Teste 1 (18:28): 3.878 requisições;  
+
+- Teste 2 (18:39): 3.879 requisições;  
+
+- Teste 3 (18:45): 3.876 requisições;  
+
+Todos os testes tiveram um número semelhante de requisições, com uma taxa de requisições por segundo variando entre 16.08/s e 16.10/s.
+
+**Requisições Falhas:**
+
+Em todos os três testes, nenhuma requisição falhou.  
+
+**Checks e Thresholds:**
+
+Todos os testes passaram em todos os checks (status code e tempo de resposta dentro do esperado).
+
+Nenhum threshold foi violado em nenhum dos testes.
+
+**Duração das Requisições:**
+
+- A duração média das requisições (http_req_duration) variou entre 3.51 ms e 3.98 ms.  
+
+- O tempo máximo de duração variou entre 30.51 ms e 91.48 ms.  
+
+## Listar Filme Individualmente
+
+![alt text](imgs/movies/getidmovies.png)
+
+**Total de Requisições:**
+
+- Teste 1 (18:49): 72.719 requisições.  
+
+- Teste 2 (18:52): 74.032 requisições.  
+
+- Teste 3 (18:55): 55.852 requisições.  
+
+A taxa de requisições por segundo variou entre **455.49/s e 604.07/s**, indicando um alto volume de requisições.  
+
+**Requisições Falhas:**
+
+Em todos os três testes, nenhuma requisição falhou.  
+
+**Checks e Thresholds:**
+
+- Todos os testes passaram em todos os checks (status code e tempo de resposta dentro do esperado).  
+
+- Nenhum threshold foi violado em nenhum dos testes.  
+
+**Duração das Requisições:**
+
+- A duração média das requisições (http_req_duration) variou entre 3.45 ms e 5.92 ms.  
+
+- O tempo máximo de duração variou entre 60.84 ms e 167.43 ms.  
+
+## Editar Filme  
+
+![alt text](imgs/movies/putmovies.png)
+
+**Total de Requisições:**
+
+- Em todos os testes, foram feitas **13** requisições.  
+
+- Nenhuma requisição falhou.  
+
+**Checks e Thresholds:**
+
+- Todos os checks passaram sem falhas.  
+
+- Nenhuma threshold foi violada.  
+
+**Iterações:**
+
+- Foram realizadas 5 iterações em cada teste.  
+
+- A taxa de iterações foi de aproximadamente 0.80 a 0.81 iterações por segundo.  
+
+## Excluir filme 
+
+![alt text](imgs/movies/deletemovies.png)
+
+**Total de Requisições:**
+
+- Todos os testes tiveram um número elevado de requisições, em torno de 3540 a 3546 requisições.  
+
+- Nenhuma requisição falhou.  
+
+**Checks e Thresholds:**
+
+- **Checks Passados:** 450 checks passaram em todos os testes.  
+
+- **Checks Falhos:** 150 checks falharam em todos os testes, especificamente na verificação de status code check(204).  
+
+- Nenhuma threshold foi violada.  
+
+**Iterações:**
+
+- Foram realizadas 3241 a 3246 iterações em cada teste.  
+
+- A taxa de iterações foi de aproximadamente 26.49 a 26.60 iterações por segundo.  
