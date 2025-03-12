@@ -4,6 +4,8 @@ Meu nome é Rodrigo,tenho 19 anos e moro em Vila Lângaro, uma pequena cidade do
 
 # Menções
 
+Gostaria de agradecer aos colegas Beto, Jean e Hellen pela ajuda nesta sprint.
+
 # Planejamento de Testes
 
 ## Nome do Projeto
@@ -93,6 +95,12 @@ Desenvolvi este mapa mental com foco no planejamento dos testes para a sprint. E
 - Procurar Ticket por id;  
 - Editar ticket;  
 - Excluir Ticket;  
+
+# Posíveis Melhorias
+
+- Implementação dos verbos GET e DELETE na rota /tickets;  
+- Ao cadastrar um filme não deveria ser possível adicionar uma data de exibição anterior à data de lançamento do filme;  
+- No cadastro de tickets, aceitar apenas id de filmes que estejam cadastrados na rota /movies.  
 
 # Resultados dos Testes Funcionais
 
