@@ -60,7 +60,6 @@ Será utilizada a API NestJS Cinema https://github.com/juniorschmitz/nestjs-cine
 - Não deverá ser possível cadastrar um ticket para um filme não cadastrado;
 - Não deverá ser possível cadastrar um ticket com um assento fora do intervalo entre 0-99;
 - Não deverá ser possível cadastrar um ticket com preço fora do intervalo entre 0-60;  
-- Não deverá ser possível listar,editar ou excluir um ticket não cadastrado (inexistente);
 
 ## Riscos  
 - Falhas no servidor da API;  
