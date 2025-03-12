@@ -631,6 +631,6 @@ Teste 3: 6,47 ms;
 
 - Duração Média da Iteração (iteration_duration): 1032.59 ms;  
 
-## Comclusão
+## Conclusão dos Testes de Performance
 
 Após os testes, concluí- se que a API cumpre o que promete no quesito performance em relação as User Stories. Ela possui um tempo de reposta muito bom, com os checks em sua grande maioria passando( apenas o checkStatusCode do DELETE não passou pois ele retornava 200 ao invés de 204).Além disso, os thresholds também obtiveram sucesso e o througput foi adequado. 
