@@ -459,3 +459,170 @@ Em todos os três testes, nenhuma requisição falhou.
 - Foram realizadas 3241 a 3246 iterações em cada teste.  
 
 - A taxa de iterações foi de aproximadamente 26.49 a 26.60 iterações por segundo.  
+
+## Cadastrar Tickets (Teste da Fumaça)
+
+![alt text](imgs/tickets/ticketsmoke.png)
+
+**Total de Requisições:**
+
+- Todos os testes tiveram 5 requisições.  
+
+- Nenhuma requisição falhou (0 falhas).  
+
+**Checks e Thresholds:**  
+
+- Checks Passados: 10 checks passaram em todos os testes.  
+
+- Checks Falhos: 0 checks falharam em todos os testes.  
+
+- Nenhum limite de threshold foi violado.  
+
+**Iterações:**
+
+- Foram realizadas 5 iterações em cada teste.  
+
+- A taxa de iterações foi de aproximadamente 0.99 iterações por segundo.  
+
+## Cadastrar Tickets (Teste de Escalabilidade)
+
+![alt text](imgs/tickets/ticketsescalabilidade.png)
+
+**Total de Requisições:**
+
+- Teste 1: 3873 requisições;  
+
+- Teste 2: 3879 requisições;  
+
+- Teste 3: 3877 requisições;  
+
+**Requisições Falhas:**
+
+- **Todos os Testes**: 0 requisições falhas;  
+
+**Thresholds e Check**
+
+- Todos os checks e thresholds passaram.  
+
+**Duração Média das Requisições:**  
+
+- Teste 1: 5.05 ms;  
+
+- Teste 2: 4.12 ms;  
+
+- Teste 3: 4.25 ms; 
+
+## Cadastrar Tickets (Teste de Carga)
+
+![alt text](imgs/tickets/ticketsload.png)
+
+**Total de Requisições:**  
+
+- Teste 1: 3241 requisições;  
+
+- Teste 2: 3237 requisições;  
+
+- Teste 3: 3228 requisições;  
+
+**Requisições Falhas:**  
+
+Todos os Testes: 0 requisições falhas.  
+
+**Checks e Thresholds:**  
+
+Todos os checks e thresholds passaram.  
+
+**Duração Média das Requisições:**  
+
+Teste 1: 3.97 ms;  
+
+Teste 2: 4.27 ms;  
+
+Teste 3: 4.73 ms;  
+
+## Cadastrar Tickets (Teste de Pico)
+
+![alt text](imgs/tickets/ticketsspike.png)
+
+**Total de Requisições:**  
+
+- Teste 1: 6019 requisições;  
+
+- Teste 2: 5997 requisições;  
+
+- Teste 3: 6023 requisições;  
+
+**Requisições Falhas:**  
+
+- Todos os Testes: 0 requisições falhas;  
+
+- Todos os Testes: 0 limiares violados;  
+
+**Checks e Tresholds:**
+
+- Todos os checks e thresholds passaram;  
+
+**Duração Média das Requisições:**
+
+- Teste 1: 3.77 ms;   
+
+- Teste 2: 4.83 ms;  
+
+- Teste 3: 3.71 ms;  
+
+## Cadastrar Tickets (Teste de Stress)
+
+![alt text](imgs/tickets/ticketsstress.png)
+
+**Total de Requisições:**  
+
+- Teste 1: 10.323;  
+- Teste 2: 10.370;  
+- Teste 3: 10.364;  
+
+**Falhas: **
+- Nenhuma falha em nenhuma das execuções.  
+
+**Taxa de Requisição:**  
+
+- Teste 1: 85,64 req/s;  
+- Teste 2: 85,99 req/s;  
+- Teste 3: 86,04 req/s;  
+
+**Duração Média das Requisições:**  
+
+Teste 1: 6,54 ms;  
+Teste 2: 6,17 ms;  
+Teste 3: 6,47 ms;  
+
+## Fluxo Completo (Teste da Fumaça)
+
+![alt text](imgs/fluxocompleto/fluxocompleto.png)
+
+**Métricas Gerais:**;  
+
+- Total de Requisições: 20;  
+
+- Requisições Falhas: 0;  
+
+- Limiares Violados: 0;  
+
+- Checks Falhos: 5;  
+
+**Métricas de Requisições:**
+
+- Duração Média das Requisições: 7.36 ms;  
+
+- Tempo Máximo de Requisição: 40.96 ms;  
+
+- Tempo de Espera Média (http_req_waiting): 7.22 ms;  
+
+- Tempo de Envio Média (http_req_sending): 0.09 ms;  
+
+- Tempo de Recebimento Média (http_req_receiving): 0.05 ms;  
+
+- Duração Média da Iteração (iteration_duration): 1032.59 ms;  
+
+## Comclusão
+
+Após os testes, concluí- se que a API cumpre o que promete no quesito performance em relação as User Stories. Ela possui um tempo de reposta muito bom, com os checks em sua grande maioria passando( apenas o checkStatusCode do DELETE não passou pois ele retornava 200 ao invés de 204).Além disso, os thresholds também obtiveram sucesso e o througput foi adequado. 
