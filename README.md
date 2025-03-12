@@ -23,9 +23,6 @@ Projeto da Challenge Final (Sprint 8) do Programa de Bolsas da Compass UOL. Nele
 - Atualizar um filme;  
 - Excluir um filme;  
 - Criar Ticket;  
-- Listar os tickets;  
-- Atualizar um ticket;  
-- Excluir ticket.  
 
 ## Local de Testes
 
